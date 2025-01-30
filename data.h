@@ -12,8 +12,8 @@ uint64_t Q_LENGTH = 4096;
 #include "Q_content.h"
 #include "K_content.h"
 #include "V_content.h"
-#include "WQ_content"
-#include "WK_content"
+#include "WQ_content.h"
+#include "WK_content.h"
 #include "WV_content.h"  
 
 // DMA test

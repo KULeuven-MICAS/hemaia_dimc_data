@@ -1,5 +1,6 @@
 #include "kernel_stimulus.h"
 #include "conv_golden_result.h"
+#include "mha_golden_result.h"
 #include "Q1K1T_G.h"
 
 uint64_t Q1K1T_LENGTH = 512;
@@ -9,7 +10,11 @@ uint64_t Q_LENGTH = 4096;
 // here Q, K V and WQ, WK, WV should have the form of 1-D array
 // with a length of 4096, and elements of uint64_t
 #include "Q_content.h"
-
+#include "K_content.h"
+#include "V_content.h"
+#include "WQ_content"
+#include "WK_content"
+#include "WV_content.h"  
 
 // DMA test
 

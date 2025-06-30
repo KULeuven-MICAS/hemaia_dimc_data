@@ -4,105 +4,57 @@ int Batch = 1;
 
 int gemmx_M = 8;
 
-int gemmx_K = 8;
+int gemmx_K = 64;
 
-int gemmx_N = 32;
+int gemmx_N = 8;
 
-// A streamer setting, narrow ports
+int M2 = 1;
+int K2 = 1;
+int N2 = 8;
+
 int32_t Aslstride0 = 1;
-
-int32_t Aslstride1 = 64;
-
-// gemmx_K
-int32_t Atlbound0 = 8;
-
+int32_t Aslstride1 = 512;
+int32_t Atlbound0 = 64;
 int32_t Atlstride0 = 8;
-
-// gemmx_N
-int32_t Atlbound1 = 32;
-
+int32_t Atlbound1 = 8;
 int32_t Atlstride1 = 0;
-
-// gemmx_M
 int32_t Atlbound2 = 8;
-
-int32_t Atlstride2 = 512;
-
+int32_t Atlstride2 = 4096;
 int32_t Atlbound3 = 1;
-
 int32_t Atlstride3 = 0;
-
 int32_t Atlbound4 = 1;
-
 int32_t Atlstride4 = 0;
-
 int32_t Atlbound5 = 1;
-
 int32_t Atlstride5 = 0;
-
-// B streamer setting, wide ports!
-// pay attention to the address alignment!
-// B spatial address
 int32_t Bslstride0 = 1;
-
 int32_t Bslstride1 = 8;
-
-// gemmx_K
-int32_t Btlbound0 = 8;
-
+int32_t Btlbound0 = 64;
 int32_t Btlstride0 = 64;
-
-// gemmx_N
-int32_t Btlbound1 = 32;
-
-int32_t Btlstride1 = 512;
-
-// gemmx_M
+int32_t Btlbound1 = 8;
+int32_t Btlstride1 = 4096;
 int32_t Btlbound2 = 8;
-
 int32_t Btlstride2 = 0;
-
-// C streamer setting, wide ports!
-// pay attention to the address alignment!
-// c not in use, but need to set correct temporal bounds
-int32_t Cslstride0 = 8.0;
-
-int32_t Cslstride1 = 64.0;
-
-int32_t Ctlbound0 = 32;
-
-int32_t Ctlstride0 = 256.0;
-
+int32_t Cslstride0 = 8;
+int32_t Cslstride1 = 64;
+int32_t Ctlbound0 = 8;
+int32_t Ctlstride0 = 256;
 int32_t Ctlbound1 = 8;
-
-int32_t Ctlstride1 = 8192;
-
+int32_t Ctlstride1 = 2048;
 int32_t Ctlbound2 = 1;
-
 int32_t Ctlstride2 = 0;
-
-// D32 streamer setting, wide ports!
-// pay attention to the address alignment!
-// d32 in use
-// 8 spatial bound0
 int32_t D32slstride0 = 8;
-
-// 4 spatial bound1
 int32_t D32slstride1 = 64;
-
-// gemmx_N
-int32_t D32tlbound0 = 32;
-
+int32_t D32tlbound0 = 8;
 int32_t D32tlstride0 = 256;
-
-// gemmx_M
 int32_t D32tlbound1 = 8;
-
-int32_t D32tlstride1 = 8192;
-
+int32_t D32tlstride1 = 2048;
 int32_t D32tlbound2 = 1;
-
 int32_t D32tlstride2 = 0;
+int32_t delta_local_a = 0;
+int32_t delta_local_b = 32768;
+int32_t delta_local_c = 65536;
+int32_t delta_local_d32 = 81920;
+int32_t delta_local_d8 = 81920;
 
 // D8 streamer setting, wide ports!
 // pay attention to the address alignment!
@@ -122,16 +74,6 @@ int32_t D8tlstride1 = 4096.0;
 int32_t D8tlbound2 = 1;
 
 int32_t D8tlstride2 = 0;
-
-int32_t delta_local_a = 0;
-
-int32_t delta_local_b = 4096.0;
-
-int32_t delta_local_c = 20480.0;
-
-int32_t delta_local_d32 = 20480.0;
-
-int32_t delta_local_d8 = 20480.0;
 
 int8_t subtraction_a = 0;
 
